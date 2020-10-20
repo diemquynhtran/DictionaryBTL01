@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="635.0" style="-fx-background-color: #FAEBD7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DictionaryApplication">
+   <children>
+      <TabPane prefHeight="430.0" prefWidth="635.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Tra cứu">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="367.0" prefWidth="641.0">
+                     <children>
+                        <TextField fx:id="imWord" layoutX="24.0" layoutY="26.0" prefHeight="46.0" prefWidth="193.0">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font></TextField>
+                        <Button fx:id="search" layoutX="233.0" layoutY="26.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="62.0" style="-fx-background-color: #CC99FF;" text="Search">
+                           <font>
+                              <Font name="Comic Sans MS" size="13.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="#afa4a4" />
+                                    <Stop color="#643c3c" offset="0.007604451955014276" />
+                                    <Stop color="#945656" offset="0.9877862595419847" />
+                                    <Stop color="#fdfdfd" offset="0.9961832061068702" />
+                                    <Stop color="#c77e7e" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Button>
+                        <TextArea fx:id="outWord" layoutX="318.0" layoutY="25.0" prefHeight="199.0" prefWidth="291.0">
+                           <font>
+                              <Font name="Calibri" size="19.0" />
+                           </font></TextArea>
+                        <TextArea fx:id="exampleArea" layoutX="316.0" layoutY="240.0" prefHeight="141.0" prefWidth="292.0" />
+                        <ListView fx:id="listView" layoutX="24.0" layoutY="83.0" prefHeight="298.0" prefWidth="272.0" />
+                        <Button fx:id="speak" layoutX="547.0" layoutY="57.0" mnemonicParsing="false" text="Speak" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Từ điển của bạn">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane layoutX="1.0" prefHeight="401.0" prefWidth="635.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Add Word">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TextField fx:id="addNewWord" layoutX="156.0" layoutY="83.0" />
+                                          <TextField fx:id="voidWord" layoutX="156.0" layoutY="126.0" />
+                                          <TextField fx:id="typeWord" layoutX="156.0" layoutY="174.0" />
+                                          <TextField fx:id="meanWord" layoutX="156.0" layoutY="225.0" />
+                                          <Label layoutX="76.0" layoutY="87.0" text="Từ cần thêm:" />
+                                          <Label layoutX="74.0" layoutY="229.0" text="Giải nghĩa: " />
+                                          <Label layoutX="72.0" layoutY="130.0" text="Phát âm:" />
+                                          <Label layoutX="76.0" layoutY="177.0" text="Loại từ:" />
+                                          <Button fx:id="add" layoutX="191.0" layoutY="275.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="82.0" style="-fx-background-color: #CCCCCC;" text="Add Word" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Edit Word">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TextField fx:id="oldWordtf" layoutX="118.0" layoutY="56.0" />
+                                          <TextField fx:id="newWordtf" layoutX="118.0" layoutY="98.0" />
+                                          <Label layoutX="54.0" layoutY="60.0" text="Từ cần sửa:" />
+                                          <Label layoutX="54.0" layoutY="102.0" text="Sửa thành:" />
+                                          <Button fx:id="edit" layoutX="162.0" layoutY="139.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="52.0" style="-fx-background-color: #00FFFF;" text="Edit" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab text="Delete Word">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TextField fx:id="delWord" layoutX="169.0" layoutY="77.0" />
+                                          <Label layoutX="97.0" layoutY="81.0" text="Từ cần xóa:" />
+                                          <Button fx:id="delete" layoutX="210.0" layoutY="126.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="70.0" style="-fx-background-color: #CCFFFF;" text="Delete" />
+                                       </children></AnchorPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Help">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
